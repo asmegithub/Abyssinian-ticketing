@@ -20,8 +20,8 @@ mongoose
     "mongodb+srv://asmarestu12:mongocloud2123@taskmanager.ladnzjg.mongodb.net/cinema?retryWrites=true&w=majority&appName=taskManager"
   )
   .then((result) => {
-    console.log("connected TO PORT ", process.env.PORT);
-    app.listen(3000);
+    // console.log("connected TO PORT ", process.env.PORT);
+    app.listen(3001);
   })
   .catch((err) => {
     console.log(err);
