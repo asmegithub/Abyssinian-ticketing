@@ -16,12 +16,13 @@ app.use("/", authRoutes);
 app.use("/admin", adminRoutes);
 
 mongoose
-  .connect(
-    "mongodb+srv://asmarestu12:mongocloud2123@taskmanager.ladnzjg.mongodb.net/cinema?retryWrites=true&w=majority&appName=taskManager"
-  )
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((result) => {
-    // console.log("connected TO PORT ", process.env.PORT);
-    app.listen(3001);
+    console.log("connected TO PORT ", process.env.PORT);
+    app.listen(3000);
   })
   .catch((err) => {
     console.log(err);
